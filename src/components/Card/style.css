@@ -1,0 +1,43 @@
+p {
+    margin: 0;
+}
+
+.Card {
+    background: white;
+    border-radius: 10px;
+}
+
+.Card_image {
+    text-align: center;
+}
+
+.Card_types {
+    display: flex;
+    justify-content: center;    
+}
+
+.Card_type {
+    padding: 5px 10px;
+    margin: 10px 10px 10px 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.Card_name {
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 800;
+}
+
+.Card_info {
+    text-align: center;
+    margin-left: 10px;
+}
+
+.Card_data {
+    padding-bottom: 10px;
+}
+
+.Card_data .title {
+    font-weight: 700;
+}
