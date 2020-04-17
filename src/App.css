@@ -10,18 +10,24 @@
     grid-gap: 10px;
 }
 
-.btn {
+.navigation {
     display: flex;
     justify-content: center;
     margin: 20px 0;
 }
 
-.btn button {
+.navigation button {
     border-style: none;
     padding: 5px 10px;
-    margin-right: 10px;
+    margin: 0px 10px ;
     border-radius: 5px;
-    background: #30a7d7;
+    background: #4abfee;
     color: #fff;
     font-size: 1em;
+    font-weight: 600;
+}
+.navigation input {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
 }

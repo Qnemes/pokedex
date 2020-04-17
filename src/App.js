@@ -74,8 +74,9 @@ function getPokemon({ url }) {
       <div>
         {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
           <>
-            <div className="btn">
+            <div className="navigation">
               <button onClick={previous}>Previous page</button>
+              <input type="text" placeholder="Enter keywords..."/>
               <button onClick={next}>Next page</button>
             </div>
             <div className="grid-container">
@@ -83,7 +84,7 @@ function getPokemon({ url }) {
                 return <Card key={i} pokemon={pokemon} />
               })}
             </div>
-            <div className="btn">
+            <div className="navigation">
               <button onClick={previous}>Previous page</button>
               <button onClick={next}>Next page</button>
             </div>

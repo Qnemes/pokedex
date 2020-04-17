@@ -32,8 +32,10 @@ function Card({ pokemon }) {
                     <p>{pokemon.height}</p>
                 </div>
                 <div className="Card_data Card_data--ability">
-                    <p className="title">Ability:</p>
-                    <p>{pokemon.abilities[0].ability.name}</p>                    
+                    <p className="title">Abilities:</p>
+                    {console.log(pokemon.abilities)}
+                    {pokemon.abilities.map(ability => <p>{ability.ability.name}</p>               
+                    )}
                 </div>
             </div>
         </div>
