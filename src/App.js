@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar/Navbar';
-import Card from './components/Card/Card';
-import './App.css';
+import Navbar from './components/Navbar';
+import Card from './components/Card';
+import './stylesheets/main.scss'
 
 function App() {
   const [pokemonData, setPokemonData] = useState([])
@@ -10,25 +10,25 @@ function App() {
   const [loading, setLoading] = useState(true);
   const pokemonEndpoint = 'https://pokeapi.co/api/v2/pokemon'
 
-async function getPokemons(url) {
-  return new Promise((resolve, reject) => {
+  async function getPokemons(url) {
+    return new Promise((resolve, reject) => {
       fetch(url)
-      .then(res => res.json())            
-      .then(data => {
-        resolve(data)
-      })
+        .then(res => res.json())
+        .then(data => {
+          resolve(data)
+        })
     });
   }
 
-function getPokemon({ url }) {
-  return new Promise((resolve, reject) => {
-    fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      resolve(data)
-    })
-  });
-}
+  function getPokemon({ url }) {
+    return new Promise((resolve, reject) => {
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          resolve(data)
+        })
+    });
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -75,18 +75,19 @@ function getPokemon({ url }) {
         {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
           <>
             <div className="navigation">
-              <button onClick={previous}>Previous page</button>
-              <input type="text" placeholder="Enter keywords..."/>
-              <button onClick={next}>Next page</button>
+              <button className="navigation__btn" onClick={previous}>Previous page</button>
+              <input className="navigation__input" type="text" placeholder="Enter keywords..." />
+              <button className="navigation__btn" onClick={next}>Next page</button>
             </div>
             <div className="grid-container">
               {pokemonData.map((pokemon, i) => {
-                return <Card key={i} pokemon={pokemon} />
+                // console.log(pokemon.id)
+                return <Card key={pokemon.id} pokemon={pokemon} />
               })}
             </div>
             <div className="navigation">
-              <button onClick={previous}>Previous page</button>
-              <button onClick={next}>Next page</button>
+              <button className="navigation__btn" onClick={previous}>Previous page</button>
+              <button className="navigation__btn" onClick={next}>Next page</button>
             </div>
           </>
         )}

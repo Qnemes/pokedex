@@ -1,0 +1,17 @@
+.navbar {
+    font-size: 2rem;
+	padding: 2rem;
+	background: linear-gradient(145deg, rgba(118, 235, 128, .97), rgba(255, 131, 128, .94));
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	color: white;	
+	font-weight: 800;
+	&__img-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__logo {
+		height: 6rem;
+		width: auto;
+	}
+}

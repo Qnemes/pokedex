@@ -7,7 +7,6 @@ const elementColor = {
     ground: '#f7de3f',
     normal: '#a4acaf',
     pyschic: '#f366b9',
-    steel: '#9eb7b',
     dark: '#707070',
     electric: '#eed535',
     fighting: '#d56723',
