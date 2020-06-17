@@ -14,11 +14,13 @@
         padding: .5rem 1rem;
         margin: 0px 1rem;
         border-radius: .5rem;
-        background: #4abfee;
-        color: #fff;
+        background-color: $color-btn;
+        color: $color-btn-text;
         font-size: 1em;
         font-weight: 600;
+        transition: background-color .25s ease;
         &:hover {
+            background-color: $color-btn-hover;
             cursor: pointer;
         }
     }
@@ -27,6 +29,6 @@
         justify-content: center;
         border-radius: .5rem;
         padding: 1rem;
-        border: 1px solid #303030;
+        border: 1px solid $color-input-border;
     }
 }

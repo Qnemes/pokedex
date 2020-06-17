@@ -12,7 +12,7 @@ function App() {
 
   async function getPokemons(url) {
     return new Promise((resolve, reject) => {
-      fetch(url)
+      fetch(url, {mode: 'cors'})
         .then(res => res.json())
         .then(data => {
           resolve(data)
