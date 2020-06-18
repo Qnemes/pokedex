@@ -10,7 +10,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const pokemonEndpoint = 'https://pokeapi.co/api/v2/pokemon'
 
-  async function getPokemons(url) {
+  const getPokemons = async (url) => {
     return new Promise((resolve, reject) => {
       fetch(url)
         .then(res => res.json())
@@ -20,7 +20,7 @@ function App() {
     });
   }
 
-  function getPokemon({ url }) {
+  const getPokemon = ({ url }) => {
     return new Promise((resolve, reject) => {
       fetch(url)
         .then(res => res.json())
@@ -31,15 +31,15 @@ function App() {
   }
 
   useEffect(() => {
-    async function fetchData() {
-      let res = await getPokemons(pokemonEndpoint)
+    const fetchData = async () => {
+      let res = await getPokemons(pokemonEndpoint);
       setNextUrl(res.next);
       setPrevUrl(res.previous);
       await loadPokemon(res.results);
       setLoading(false);
     }
     fetchData();
-  }, [])
+  }, [])  // eslint-disable-line react-hooks/exhaustive-deps
 
   const next = async () => {
     setLoading(true);

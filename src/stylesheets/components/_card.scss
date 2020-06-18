@@ -12,7 +12,7 @@ p {
 	&::before {
 		position: absolute;
 		top: 0;
-		left: -75%;
+		left: -85%;
 		z-index: 2;
 		display: block;
 		content: '';
@@ -24,6 +24,7 @@ p {
 		transform: skewX(-25deg);
 	}
 	&:hover {
+		z-index: 4;
 		transform: translateY(1.25rem) scale(1.075);
 		&::before {
 			-webkit-animation: shine 1.5s;
