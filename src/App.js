@@ -32,18 +32,23 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      let res = await getPokemons(pokemonEndpoint);
+      try {
+      const res = await getPokemons(pokemonEndpoint);
       setNextUrl(res.next);
       setPrevUrl(res.previous);
       await loadPokemon(res.results);
       setLoading(false);
+      } catch (err) {
+        throw new Error(err);
+      }
     }
     fetchData();
   }, [])  // eslint-disable-line react-hooks/exhaustive-deps
 
+
   const next = async () => {
     setLoading(true);
-    let data = await getPokemons(nextUrl);
+    const data = await getPokemons(nextUrl);
     await loadPokemon(data.results);
     setNextUrl(data.next);
     setPrevUrl(data.previous);
@@ -53,7 +58,7 @@ function App() {
   const previous = async () => {
     if (!prevUrl) return;
     setLoading(true);
-    let data = await getPokemons(prevUrl);
+    const data = await getPokemons(prevUrl);
     await loadPokemon(data.results);
     setNextUrl(data.next);
     setPrevUrl(data.previous);
@@ -61,8 +66,8 @@ function App() {
   }
 
   const loadPokemon = async (data) => {
-    let pokemonData = await Promise.all(data.map(async pokemon => {
-      let pokemonRecord = await getPokemon(pokemon)
+    const pokemonData = await Promise.all(data.map(async pokemon => {
+      const pokemonRecord = await getPokemon(pokemon)
       return pokemonRecord
     }))
     setPokemonData(pokemonData);
@@ -81,7 +86,6 @@ function App() {
             </div>
             <div className="grid-container">
               {pokemonData.map((pokemon, i) => {
-                // console.log(pokemon.id)
                 return <Card key={pokemon.id} pokemon={pokemon} />
               })}
             </div>

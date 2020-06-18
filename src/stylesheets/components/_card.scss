@@ -2,6 +2,7 @@ p {
 	margin: 0;
 }
 .card {
+	z-index: 1;
 	color: $color-card-text;
 	position: relative;
 	background: $color-card-bckgr;

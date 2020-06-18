@@ -32,7 +32,6 @@ function Card({ pokemon }) {
                 </div>
                 <div className="card__data card__data--ability">
                     <p className="title">Abilities:</p>
-                    {/* {console.log(pokemon.abilities)} Temporary for dev puprose */}
                     {pokemon.abilities.map((ability, i) => <p key={i}>{ability.ability.name}</p>
                     )}
                 </div>
